@@ -1,4 +1,5 @@
 [workspace]
+preview = ["pixi-build"]
 channels = ["conda-forge"]
 name = "xviewlite"
 platforms = ["linux-64"]
@@ -9,3 +10,29 @@ version = "0.1.0"
 start = "unset PYTHONPATH && export IPYTHONDIR=$PIXI_PROJECT_ROOT/.ipython && ipython --profile=default -i launch_xview_gui.py"
 
 [dependencies]
+python = ">=3.12,<3.14"
+databroker = "==2.0.0b64"
+#pyqt6 = ">=6.11.0"
+pyqt = ">=5.15"
+setuptools = "<81"
+xraylarch = "==2025.1.1"
+slackclient = "==2.9.3"
+dropbox = "==11.29.0"
+opencv = "==4.10.0"
+tiled = "==0.1.6"
+pandas = "==2.3.0"
+
+
+[pypi-dependencies]
+
+xview = { git = "https://github.com/NSLS-II-ISS/xview.git", branch = "main"}
+xas = { git = "https://github.com/NSLS2/issxas.git", branch = "main"}
+issfactortools = { git = "https://github.com/NSLS-II-ISS/issfactortools.git", branch = "main"}
+isscloudtools = { git = "https://github.com/NSLS2/isscloudtools.git", branch = "master"}
+isstools = { git = "https://github.com/NSLS2/isstools.git", branch = "main"}
+pymcr = "*"
+bluesky-widgets = "*"
+
+[activation]
+scripts = [".pixi/setup-runtime.sh"]
+
