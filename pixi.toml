@@ -1,0 +1,11 @@
+[workspace]
+channels = ["conda-forge"]
+name = "xviewlite"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+# Run this only once pixi run bash -c "export IPYTHONDIR=\$PIXI_PROJECT_ROOT/.ipython && ipython profile create default"
+start = "unset PYTHONPATH && export IPYTHONDIR=$PIXI_PROJECT_ROOT/.ipython && ipython --profile=default -i launch_xview_gui.py"
+
+[dependencies]
